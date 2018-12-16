@@ -18,6 +18,11 @@ export default class Nav {
           label: "Feeds",
           screen: "wave_client.FeedsScreen",
           title: "Wave"
+        },
+        {
+          label: "Explore",
+          screen: "wave_client.ExploreScreen",
+          title: "Wave"
         }
       ]
     });

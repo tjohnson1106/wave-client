@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-const FeedsScreen = () => (
+const ExploreScreen = () => (
   <View>
-    <Text>FeedsScreen</Text>
+    <Text>ExploreScreen</Text>
   </View>
 );
 
-export default FeedsScreen;
+export default ExploreScreen;
