@@ -16,6 +16,8 @@ const icons = {
   search1: [navIconSize, AntDesign]
 };
 
+const iconsMap = {};
+
 // pass an object with promise.all to return an an index
 // need to use JavaScript's replace method for the icon names
 
