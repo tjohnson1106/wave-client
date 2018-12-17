@@ -1,10 +1,17 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { Component } from "react";
+import { ScrollView } from "react-native";
 
-const FeedsScreen = () => (
-  <View>
-    <Text>FeedsScreen</Text>
-  </View>
-);
+import { ImageArea } from "../../components";
+
+class FeedsScreen extends Component {
+  state = {};
+  render() {
+    return (
+      <ScrollView>
+        <ImageArea />
+      </ScrollView>
+    );
+  }
+}
 
 export default FeedsScreen;
