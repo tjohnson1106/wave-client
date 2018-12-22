@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
+import Header from "./Header";
+
 class ImageArea extends Component {
   render() {
     return (
       <View style={styles.root}>
+        <Header />
         <Text>Image Area</Text>
       </View>
     );
@@ -13,9 +16,9 @@ class ImageArea extends Component {
 
 const styles = StyleSheet.create({
   root: {
-    minHeight: 600,
+    minHeight: 500,
     backgroundColor: "red",
-    padding: 10
+    paddingBottom: 10
   }
 });
 
