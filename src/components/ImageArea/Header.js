@@ -1,17 +1,25 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-import { makeCircle } from "../../utils/themes";
+import { makeCircle, makeHitSlop } from "../../utils/themes";
+import { fakeAvatar } from "../../utils/constants";
 
 export default function Header() {
   return (
     <View style={styles.root}>
       <View style={styles.userMetaWrapper}>
         <View style={styles.avatarWrapper}>
-          <View style={styles.avatarImg} />
+          <Image source={{ uri: fakeAvatar }} style={styles.avatarImg} />
+        </View>
+        <View style={styles.userInfoWrapper}>
+          <Text style={styles.username}> Bracket Factory</Text>
+          <Text style={styles.location}> New York, NY</Text>
         </View>
       </View>
-      <View style={styles.buttonWrapper}>{}</View>
+      <TouchableOpacity hitSlop={makeHitSlop(20)} style={styles.buttonWrapper}>
+        <MaterialCommunityIcons name="dots-horizontal" size={25} />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -25,7 +33,6 @@ const styles = StyleSheet.create({
   },
   userMetaWrapper: {
     flex: 1,
-    backgroundColor: "dodgerblue",
     flexDirection: "row"
   },
   buttonWrapper: {
@@ -34,12 +41,21 @@ const styles = StyleSheet.create({
   },
   avatarWrapper: {
     flex: 0.15,
-    backgroundColor: "pink",
     justifyContent: "center",
     alignItems: "center"
   },
   avatarImg: {
-    backgroundColor: "green",
     ...makeCircle(45)
+  },
+  userInfoWrapper: {
+    flex: 1,
+    justifyContent: "center",
+    paddingLeft: 10
+  },
+  username: {
+    color: "gray"
+  },
+  location: {
+    color: "gray"
   }
 });
