@@ -3,6 +3,7 @@ import { View, StyleSheet, Image } from "react-native";
 
 import Header from "./Header";
 import ActionButtons from "./ActionButtons";
+import Meta from "./Meta";
 
 class ImageArea extends Component {
   render() {
@@ -19,6 +20,7 @@ class ImageArea extends Component {
           }}
         />
         <ActionButtons />
+        <Meta />
       </View>
     );
   }
