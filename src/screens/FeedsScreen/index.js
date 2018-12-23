@@ -7,7 +7,7 @@ class FeedsScreen extends Component {
   state = {};
   render() {
     return (
-      <ScrollView>
+      <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
         <ImageArea />
       </ScrollView>
     );

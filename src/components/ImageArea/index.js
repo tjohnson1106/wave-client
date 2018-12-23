@@ -27,7 +27,11 @@ class ImageArea extends Component {
           <TouchableOpacity>
             <Text style={styles.viewAllComments}>View all 13 comments</Text>
           </TouchableOpacity>
+
           <CommentInput />
+        </View>
+        <View style={styles.timeWrapper}>
+          <Text style={styles.time}>6 Hours ago</Text>
         </View>
       </View>
     );
@@ -48,6 +52,16 @@ const styles = StyleSheet.create({
   },
   viewAllComments: {
     ...human.calloutObject,
+    color: iOSColors.midGray
+  },
+  timeWrapper: {
+    height: 70,
+    justifyContent: "center",
+    alignItems: "flex-start",
+    paddingHorizontal: 16
+  },
+  time: {
+    ...human.footnoteObject,
     color: iOSColors.midGray
   }
 });
