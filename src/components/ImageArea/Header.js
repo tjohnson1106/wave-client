@@ -41,8 +41,7 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   buttonWrapper: {
-    flex: 0.1,
-    backgroundColor: "yellow"
+    flex: 0.1
   },
   avatarWrapper: {
     flex: 0.15,

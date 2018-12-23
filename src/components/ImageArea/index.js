@@ -1,14 +1,24 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 
 import Header from "./Header";
+import ActionButtons from "./ActionButtons";
 
 class ImageArea extends Component {
   render() {
     return (
       <View style={styles.root}>
         <Header />
-        <Text>Image Area</Text>
+        {/* 12232018 image is temp placeholder */}
+
+        <Image
+          style={styles.img}
+          source={{
+            uri:
+              "https://res.cloudinary.com/bracket-factory/image/upload/v1528063679/fake_avatar_V04.jpg"
+          }}
+        />
+        <ActionButtons />
       </View>
     );
   }
@@ -17,8 +27,10 @@ class ImageArea extends Component {
 const styles = StyleSheet.create({
   root: {
     minHeight: 500,
-    backgroundColor: "red",
     paddingBottom: 10
+  },
+  img: {
+    flex: 1
   }
 });
 
