@@ -1,20 +1,25 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { human, systemWeights } from "react-native-typography";
 
 import { makeCircle, makeHitSlop } from "../../utils/themes";
 import { fakeAvatar } from "../../utils/constants";
 
-export default function Header() {
+export default function Header({
+  avatar = fakeAvatar,
+  username = "Bracket Factory",
+  location = "New York NY"
+}) {
   return (
     <View style={styles.root}>
       <View style={styles.userMetaWrapper}>
         <View style={styles.avatarWrapper}>
-          <Image source={{ uri: fakeAvatar }} style={styles.avatarImg} />
+          <Image source={{ uri: avatar }} style={styles.avatarImg} />
         </View>
         <View style={styles.userInfoWrapper}>
-          <Text style={styles.username}> Bracket Factory</Text>
-          <Text style={styles.location}> New York, NY</Text>
+          <Text style={styles.username}> {username}</Text>
+          <Text style={styles.location}> {location}</Text>
         </View>
       </View>
       <TouchableOpacity hitSlop={makeHitSlop(20)} style={styles.buttonWrapper}>
@@ -45,7 +50,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   avatarImg: {
-    ...makeCircle(45)
+    ...makeCircle(40)
   },
   userInfoWrapper: {
     flex: 1,
@@ -53,9 +58,10 @@ const styles = StyleSheet.create({
     paddingLeft: 10
   },
   username: {
-    color: "gray"
+    ...human.subheadObject
   },
   location: {
-    color: "gray"
+    ...human.footnoteObject,
+    ...systemWeights.light
   }
 });
