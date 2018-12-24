@@ -20,7 +20,7 @@ class ImageArea extends Component {
           }}
         />
         <ActionButtons />
-        <Meta />
+        <Meta caption={this.props.data.caption} />
         <View style={styles.commentsWrapper}>
           <TouchableOpacity>
             <Text style={styles.viewAllComments}>View all 13 comments</Text>
