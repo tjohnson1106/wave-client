@@ -11,7 +11,7 @@ import {
 import { iOSColors, human, systemWeights } from "react-native-typography";
 import LinearGradient from "react-native-linear-gradient";
 import AntDesign from "react-native-vector-icons/AntDesign";
-// import { LoginManager } from "react-native-fbsdk";
+import { LoginManager } from "react-native-fbsdk";
 
 import { fonts } from "../../utils/themes";
 
@@ -20,10 +20,10 @@ const COLOR_GRADIENTS = ["#5187fb", "#2f7083"];
 const BUTTON_GRADIENTS = ["#5187fb60", "#b4daff", "#00156c60", "#e6f4f1"];
 
 class LoginScreen extends Component {
-  // _onLoginFbPress = async () => {
-  //   const res = await LoginManager.logOut(["public_profile"]);
-  //   console.log("res", res);
-  // };
+  _onLoginFbPress = async () => {
+    const res = await LoginManager.logOut(["public_profile"]);
+    console.log("res", res);
+  };
   state = {};
   render() {
     return (
@@ -84,7 +84,7 @@ class LoginScreen extends Component {
           </View>
           <View style={[styles.section, styles.sectionBottom]}>
             <TouchableOpacity
-              // onPress={this._onLoginFbPress}
+              onPress={this._onLoginFbPress}
               style={styles.facebookLoginButton}
             >
               <AntDesign size={30} name="facebook-square" color="#5187fb" />
