@@ -11,7 +11,10 @@ registerScreens();
 export function startLogin() {
   Navigation.startSingleScreenApp({
     screen: {
-      screen: "wave_client.LoginScreen"
+      screen: "wave_client.LoginScreen",
+      navigatorStyle: {
+        navBarHidden: true
+      }
     }
   });
 }
