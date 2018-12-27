@@ -1,5 +1,5 @@
 /** @format */
 
-import Nav from "./src/Nav";
+import { init } from "./src/Nav";
 
-const App = new Nav();
+init();
