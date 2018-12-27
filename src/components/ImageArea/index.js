@@ -12,17 +12,15 @@ class ImageArea extends Component {
     return (
       <View style={styles.root}>
         <Header />
-        {/* 12232018 image is temp placeholder */}
 
         <Image
           style={styles.img}
           source={{
-            uri:
-              "https://res.cloudinary.com/bracket-factory/image/upload/v1528063679/fake_avatar_V04.jpg"
+            uri: this.props.data.imageUrl
           }}
         />
         <ActionButtons />
-        <Meta />
+        <Meta caption={this.props.data.caption} />
         <View style={styles.commentsWrapper}>
           <TouchableOpacity>
             <Text style={styles.viewAllComments}>View all 13 comments</Text>

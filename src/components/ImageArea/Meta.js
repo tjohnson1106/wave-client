@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { human, systemWeights } from "react-native-typography";
 
-export default function Meta({ caption = "User comments area", username = "username" }) {
+export default function Meta({ caption, username = "username" }) {
   return (
     <View style={styles.root}>
       <View style={styles.wrapper}>
@@ -13,7 +13,7 @@ export default function Meta({ caption = "User comments area", username = "usern
         </Text>
       </View>
       <View style={styles.wrapper}>
-        <Text style={styles.text}>
+        <Text numberOfLines={2} style={styles.text}>
           <Text style={systemWeights.regular}>{username} </Text>
           {caption}
         </Text>
