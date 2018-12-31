@@ -21,8 +21,7 @@ const BUTTON_GRADIENTS = ["#5187fb60", "#b4daff", "#00156c60", "#e6f4f1"];
 
 class LoginScreen extends Component {
   _onLoginFbPress = async () => {
-    const res = await LoginManager.logOut(["public_profile"]);
-    console.log("res", res);
+    const res = await LoginManager.logInWithReadPermissions(["public_profile"]);
   };
   state = {};
   render() {
@@ -117,8 +116,8 @@ const styles = StyleSheet.create({
   },
   appName: {
     color: iOSColors.white,
-    fontSize: 50,
-    fontFamily: fonts.julius
+    fontSize: 50
+    // fontFamily: fonts.julius
   },
   content: {
     flex: 1,
