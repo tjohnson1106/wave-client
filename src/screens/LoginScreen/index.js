@@ -13,7 +13,7 @@ import LinearGradient from "react-native-linear-gradient";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { LoginManager } from "react-native-fbsdk";
 
-import { fonts } from "../../utils/themes";
+// import { fonts } from "../../utils/themes/fonts";
 
 const COLOR_GRADIENTS = ["#5187fb", "#2f7083"];
 
@@ -22,6 +22,7 @@ const BUTTON_GRADIENTS = ["#5187fb60", "#b4daff", "#00156c60", "#e6f4f1"];
 class LoginScreen extends Component {
   _onLoginFbPress = async () => {
     const res = await LoginManager.logInWithReadPermissions(["public_profile"]);
+    console.log("res", res, "res");
   };
   state = {};
   render() {
