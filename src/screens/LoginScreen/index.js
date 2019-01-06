@@ -12,6 +12,11 @@ import { iOSColors, human, systemWeights } from "react-native-typography";
 import LinearGradient from "react-native-linear-gradient";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { LoginManager } from "react-native-fbsdk";
+import Amplify, { Auth } from "aws-amplify";
+
+import awsConfig from "../../aws-exports";
+
+Amplify.configure(awsConfig);
 
 // import { fonts } from "../../utils/themes/fonts";
 
@@ -21,8 +26,13 @@ const BUTTON_GRADIENTS = ["#5187fb60", "#b4daff", "#00156c60", "#e6f4f1"];
 
 class LoginScreen extends Component {
   _onLoginFbPress = async () => {
-    const res = await LoginManager.logInWithReadPermissions(["public_profile"]);
-    console.log("res", res, "res");
+    const res = await LoginManager.logInWithReadPermissions(["public_profile"])
+      .then((res) => {
+        console.log(res, "FB LOGIN");
+      })
+      .catch((error) => {
+        console.log("fb login error", error);
+      });
   };
   state = {};
   render() {
@@ -234,3 +244,38 @@ const styles = StyleSheet.create({
 });
 
 export default LoginScreen;
+
+// state = {
+//   authCode: ""
+// };
+
+// onChangeText(value) {
+//   this.setState({
+//     authCode: value
+//   });
+// }
+
+// signUp() {
+//   Auth.signUp({
+//     username: "tjohnson",
+//     password: "password01",
+//     email: "tjohnson1106@gmail.com",
+//     phone: "+16467761398"
+//   })
+//     .then((res) => {
+//       console.log("Signed up", res);
+//     })
+//     .catch((error) => {
+//       console.log(error, "error");
+//     });
+// }
+
+// verify() {
+//   Auth.confirmSignUp("tjohnson", authCode)
+//     .then((res) => {
+//       console.log("confirmed", res);
+//     })
+//     .catch((error) => {
+//       console.log("error confirming", error);
+//     });
+// }
